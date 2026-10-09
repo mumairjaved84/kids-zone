@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="oK_tmDAtxm1CvMg85ghQljbjf0WaFIdRN-Cra6AzZ84" />
   <meta name="google-site-verification" content="j4TPjfqpZuetJRw15KUGzAUpiwD8yhQmALby2oUdNEE" />
-  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light dark" />
@@ -210,17 +208,16 @@
     .product-photo { aspect-ratio: 1 / 1; padding: 22px; background: #fff; border-bottom: 1px solid var(--line); }
     .product-photo img { width: 100%; height: 100%; object-fit: contain; }
     .product-body { display: flex; flex: 1; flex-direction: column; padding: 24px; }
-    .product-store { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; color: var(--green); font-size: .78rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
-    .stock-status { display: inline-flex; align-items: center; gap: 6px; color: var(--coral); letter-spacing: 0; text-transform: none; }
-    .stock-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .product-store { margin-bottom: 10px; color: var(--green); font-size: .78rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
     .product-card h3 { font-size: 1.35rem; line-height: 1.16; }
-    .product-price { display: flex; align-items: baseline; gap: 9px; margin: 16px 0 11px; }
+    .product-price { margin: 16px 0 11px; }
     .product-price strong { font: 800 1.55rem/1 "Bricolage Grotesque"; }
-    .product-price s { color: var(--muted); font-size: .9rem; }
-    .product-description { color: var(--muted); margin: 0 0 18px; font-size: .93rem; }
-    .product-sizes { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
-    .product-sizes strong { color: var(--ink); }
-    .product-link { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 47px; margin-top: 18px; padding: 0 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-soft); color: var(--muted); font-weight: 800; cursor: not-allowed; }
+    .product-meta { display: flex; flex-wrap: wrap; gap: 7px 16px; margin: 0 0 18px; color: var(--muted); font-size: .9rem; font-weight: 700; }
+    .rating { color: #9a6200; }
+    @media (prefers-color-scheme: dark) { .rating { color: var(--sun); } }
+    .product-link { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 47px; margin-top: auto; padding: 0 16px; border: 1px solid var(--ink); border-radius: 10px; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 800; }
+    .product-link:hover { background: var(--coral); border-color: var(--coral); color: #fff; }
+    .product-link:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
     .product-link span { font-size: 1.1rem; }
     .snapshot-note { margin: 22px 0 0; color: var(--muted); font-size: .82rem; }
 
@@ -252,6 +249,15 @@
     .mini-copy { padding: 24px; }
     .mini-copy h3 { font-size: 1.34rem; margin: 7px 0 8px; }
     .mini-copy p { color: var(--muted); font-size: .93rem; margin: 0; }
+    .costume-guides { padding-top: 20px; }
+    .buying-guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .buying-guide-card { grid-template-columns: 1fr; min-height: 190px; color: inherit; text-decoration: none; }
+    .buying-guide-card .mini-copy { display: flex; flex-direction: column; height: 100%; }
+    .buying-guide-card h3 { margin-top: 0; }
+    .buying-guide-card p { margin-bottom: 18px; }
+    .guide-link-label { margin-top: auto; color: var(--coral); font-size: .88rem; font-weight: 800; }
+    .buying-guide-card:hover { border-color: var(--coral); }
+    .buying-guide-card:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
 
     .method { padding-top: 20px; }
     .method-box { display: grid; grid-template-columns: .75fr 1.25fr; gap: 64px; padding: 54px; border-radius: 18px; background: var(--surface-soft); }
@@ -275,9 +281,6 @@
       .categories { grid-template-columns: 1fr 1fr; }
       .category:first-child { grid-column: 1 / -1; }
       .costume-grid { grid-template-columns: 1fr 1fr; }
-      .product-card:last-child { grid-column: 1 / -1; }
-      .product-card:last-child { display: grid; grid-template-columns: minmax(260px, .8fr) 1.2fr; }
-      .product-card:last-child .product-photo { aspect-ratio: auto; border-right: 1px solid var(--line); border-bottom: 0; }
       .age-wrap, .method-box { grid-template-columns: 1fr; gap: 38px; }
       .guide-grid { grid-template-columns: 1fr; }
     }
@@ -306,8 +309,6 @@
       .category:first-child { grid-column: auto; }
       .category { min-height: 330px; }
       .costume-grid { grid-template-columns: 1fr; }
-      .product-card:last-child { display: flex; grid-column: auto; }
-      .product-card:last-child .product-photo { aspect-ratio: 1 / 1; border-right: 0; border-bottom: 1px solid var(--line); }
       .product-photo { padding: 16px; }
       .product-body { padding: 21px; }
       .age-panel { padding: 28px; border-radius: 15px 15px 48px 15px; }
@@ -334,7 +335,7 @@
     </button>
     <nav class="nav-links">
       <a href="#categories">Categories</a>
-      <a href="#costumes">Baby costumes</a>
+      <a href="#costumes">Shop</a>
       <a href="#age-guide">By age</a>
       <a href="#guides">Guides</a>
       <a class="nav-cta" href="#how-we-choose">How we choose</a>
@@ -383,50 +384,77 @@
       <div class="shell">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Costume inspiration</div>
-            <h2>Baby animal costumes</h2>
+            <div class="eyebrow">Featured picks</div>
+            <h2>Shop Baby Animal Costumes</h2>
           </div>
           <div>
-            <p>Animal costume ideas from different stores, with sizes and practical details shown up front.</p>
-            <div class="costume-intro">Reference items — not currently available</div>
+            <p>Six playful animal outfits with prices, ratings and shopper activity shown up front.</p>
+            <div class="costume-intro">Available through AliExpress</div>
           </div>
         </div>
         <div class="costume-grid">
           <article class="product-card">
-            <div class="product-photo"><img src="assets/costume-dalmatian.webp" alt="Front and back view of a child wearing a Dalmatian puppy costume"></div>
+            <div class="product-photo"><img src="assets/costume-lion.jpg" alt="Baby wearing a tan lion romper with a hooded mane and paw booties"></div>
             <div class="product-body">
-              <div class="product-store"><span>Walmart</span><span class="stock-status">Out of stock</span></div>
-              <h3>Joyfy Baby Dalmatian Puppy Costume</h3>
-              <div class="product-price"><strong>$19.99</strong><s>$35.99</s></div>
-              <p class="product-description">A spotted jumpsuit with a 3D puppy hood, attached tail, booties, plush bone and bowl. The design includes access for easier diaper changes.</p>
-              <div class="product-sizes"><strong>Sizes:</strong> 12–18 months, 18–24 months, 3T</div>
-              <span class="product-link" aria-disabled="true">Currently unavailable</span>
+              <div class="product-store">AliExpress</div>
+              <h3 title="MICHLEY Carniva Baby Rompers Winter Clothes Flannel Hooded Bodysuits Pajamas Animals Overall Jumpsuit">MICHLEY Flannel Lion Romper</h3>
+              <div class="product-price"><strong>$4.29</strong></div>
+              <div class="product-meta"><span class="rating" aria-label="Rated 4.9 out of 5 stars">★ 4.9</span><span>126 sold</span></div>
+              <a class="product-link" href="https://s.click.aliexpress.com/e/_c2v0UWyZ" target="_blank" rel="sponsored nofollow noopener" aria-label="Buy MICHLEY Carniva baby lion romper on AliExpress">Buy Now <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article class="product-card">
-            <div class="product-photo"><img src="assets/costume-teddy.webp" alt="Baby wearing a fuzzy brown teddy bear costume with a blue bow tie"></div>
+            <div class="product-photo"><img src="assets/costume-dinosaur.webp" alt="Child wearing a hooded gray T-Rex dinosaur costume with a tail"></div>
             <div class="product-body">
-              <div class="product-store"><span>Party City</span><span class="stock-status">Out of stock</span></div>
-              <h3>Fuzzy Teddy Bear Costume for Babies</h3>
-              <div class="product-price"><strong>$29.99</strong></div>
-              <p class="product-description">A fuzzy brown jumpsuit with a lighter belly, paw-print feet, bear-eared hood and blue bow tie. A rainbow-colored blanket is included.</p>
-              <div class="product-sizes"><strong>Sizes:</strong> 6–12 months, 12–18 months, 18–24 months</div>
-              <span class="product-link" aria-disabled="true">Currently unavailable</span>
+              <div class="product-store">AliExpress</div>
+              <h3 title="2025 New T-Rex Dilophosaurus Boy Halloween Outfit Triceratops Onesie Outfit Child Spinosaurus Dinosaur">2025 T-Rex Dinosaur Outfit</h3>
+              <div class="product-price"><strong>$30.04</strong></div>
+              <div class="product-meta"><span class="rating" aria-label="Rated 5.0 out of 5 stars">★ 5.0</span><span>29 sold</span></div>
+              <a class="product-link" href="https://s.click.aliexpress.com/e/_c3IiwsjR" target="_blank" rel="sponsored nofollow noopener" aria-label="Buy 2025 T-Rex dinosaur outfit on AliExpress">Buy Now <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article class="product-card">
-            <div class="product-photo"><img src="assets/costume-lion.jpg" alt="Baby wearing a tan lion onesie costume with a yarn mane and paw booties"></div>
+            <div class="product-photo"><img src="assets/costume-teddy.webp" alt="Baby wearing a fuzzy brown bear romper with a blue bow tie"></div>
             <div class="product-body">
-              <div class="product-store"><span>HalloweenCostumes.com</span><span class="stock-status">Out of stock</span></div>
-              <h3>Lion Infant Onesie Costume</h3>
-              <div class="product-price"><strong>$49.99</strong></div>
-              <p class="product-description">A tan hooded onesie with an attached yarn mane, mitts and booties. The front zipper and inseam snaps make dressing and diaper access simpler.</p>
-              <div class="product-sizes"><strong>Sizes:</strong> 0–3 through 12–18 months</div>
-              <span class="product-link" aria-disabled="true">Currently unavailable</span>
+              <div class="product-store">AliExpress</div>
+              <h3 title="Humor Bear Autumn Cartoon Style Winter Long Sleeve Baby Boys Girls Rompers Toddler Kids Playsuit Jumpsuit">Humor Bear Cartoon Romper</h3>
+              <div class="product-price"><strong>$1.31</strong></div>
+              <div class="product-meta"><span class="rating" aria-label="Rated 4.7 out of 5 stars">★ 4.7</span><span>2000+ sold</span></div>
+              <a class="product-link" href="https://s.click.aliexpress.com/e/_c2wq22p3" target="_blank" rel="sponsored nofollow noopener" aria-label="Buy Humor Bear cartoon romper on AliExpress">Buy Now <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-photo"><img src="assets/costume-bunny.webp" alt="Cream long-sleeve infant bunny romper with a hood and ears, displayed flat"></div>
+            <div class="product-body">
+              <div class="product-store">AliExpress</div>
+              <h3 title="Adorable Jumpsuit Infant Bunny Romper for Baby Girl Boy Newborn Cotton One-Piece Bodysuit with Long Sleeve">Newborn Cotton Bunny Romper</h3>
+              <div class="product-price"><strong>$11.97</strong></div>
+              <div class="product-meta"><span class="rating" aria-label="Rated 4.9 out of 5 stars">★ 4.9</span><span>247 sold</span></div>
+              <a class="product-link" href="https://s.click.aliexpress.com/e/_c4WqLMiH" target="_blank" rel="sponsored nofollow noopener" aria-label="Buy newborn cotton bunny romper on AliExpress">Buy Now <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-photo"><img src="assets/costume-panda.webp" alt="Long-sleeve infant romper with a black-and-white panda print"></div>
+            <div class="product-body">
+              <div class="product-store">AliExpress</div>
+              <h3 title="1Pc Baby Panda Print Romper, Long Sleeve Snap Crotch Jumpsuit, Soft Knit Unisex Infant Outfit">Baby Panda Print Romper</h3>
+              <div class="product-price"><strong>$2.15</strong></div>
+              <div class="product-meta"><span class="rating" aria-label="Rated 5.0 out of 5 stars">★ 5.0</span><span>14 sold</span></div>
+              <a class="product-link" href="https://s.click.aliexpress.com/e/_c33DTm1x" target="_blank" rel="sponsored nofollow noopener" aria-label="Buy baby panda print romper on AliExpress">Buy Now <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-photo"><img src="assets/costume-tiger.webp" alt="Hand-knitted newborn tiger romper and matching tiger-ear hat for a photo outfit"></div>
+            <div class="product-body">
+              <div class="product-store">AliExpress</div>
+              <h3 title="Newborn Photography Props Tiger Knitted Romper and Hat Set Baby Boy Girl Photo Outfit Cute Animal Costume">Tiger Knitted Romper &amp; Hat Set</h3>
+              <div class="product-price"><strong>$14.63</strong></div>
+              <div class="product-meta"><span class="rating" aria-label="Rated 5.0 out of 5 stars">★ 5.0</span><span>1 sold</span></div>
+              <a class="product-link" href="https://s.click.aliexpress.com/e/_c3Oaq1CV" target="_blank" rel="sponsored nofollow noopener" aria-label="Buy tiger knitted romper and hat set on AliExpress">Buy Now <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         </div>
-        <p class="snapshot-note">Reference details and last-seen prices checked October 9, 2026. These items are shown for inspiration and are not available through this site.</p>
+        <p class="snapshot-note">Prices, ratings and sold counts shown as provided on October 9, 2026. AliExpress listings may change.</p>
       </div>
     </section>
 
@@ -503,6 +531,50 @@
       </div>
     </section>
 
+    <section id="costume-guides" class="shell costume-guides">
+      <div class="section-head">
+        <h2>Baby Costume Buying Guides</h2>
+        <p>Practical help with fit, comfort, safety and value before you choose a costume.</p>
+      </div>
+      <div class="buying-guide-grid">
+        <a class="mini-guide buying-guide-card" href="guides/best-baby-animal-costumes.html">
+          <div class="mini-copy">
+            <h3>Best Baby Animal Costumes for 2026</h3>
+            <p>Our parent-approved shortlist: bear, bunny, lion, panda, tiger and dinosaur picks with prices and ratings.</p>
+            <span class="guide-link-label">Read guide →</span>
+          </div>
+        </a>
+        <a class="mini-guide buying-guide-card" href="guides/lion-costume-baby-guide.html">
+          <div class="mini-copy">
+            <h3>Baby Lion Costume Guide</h3>
+            <p>Sizing the mane right, fabrics to trust, comfort checklist and photo tips.</p>
+            <span class="guide-link-label">Read guide →</span>
+          </div>
+        </a>
+        <a class="mini-guide buying-guide-card" href="guides/baby-halloween-costume-safety.html">
+          <div class="mini-copy">
+            <h3>Baby Halloween Costume Safety</h3>
+            <p>9 essential safety rules: fabrics, fit, choking hazards, temperature and more.</p>
+            <span class="guide-link-label">Read guide →</span>
+          </div>
+        </a>
+        <a class="mini-guide buying-guide-card" href="guides/teddy-bear-costume-babies.html">
+          <div class="mini-copy">
+            <h3>Teddy Bear Costumes for Babies</h3>
+            <p>What to look for before you buy: plush quality, ears, washability.</p>
+            <span class="guide-link-label">Read guide →</span>
+          </div>
+        </a>
+        <a class="mini-guide buying-guide-card" href="guides/dinosaur-costume-babies-guide.html">
+          <div class="mini-copy">
+            <h3>Dinosaur Costumes Buying Guide</h3>
+            <p>T-Rex rompers vs detailed sets, fit tips, and what a higher price should get you.</p>
+            <span class="guide-link-label">Read guide →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <section id="how-we-choose" class="shell method">
       <div class="method-box">
         <div class="method-copy">
@@ -521,7 +593,7 @@
   </main>
 
   <footer class="shell disclosure">
-    <p><strong>Affiliate disclosure:</strong> When product recommendations are added, some links may earn a commission at no extra cost to you. Editorial choices remain independent.</p>
+    <p><strong>Affiliate disclosure:</strong> Some links on this page are affiliate links and may earn us a commission at no extra cost to you. Editorial choices remain independent.</p>
     <div class="sources">Photo sources: <a href="http://www.konyaegitimrehberi.com.tr/konya-kres-ve-anaokullari" target="_blank" rel="noopener noreferrer">Pexels</a> · <a href="https://www.pexels.com/search/cognitive/" target="_blank" rel="noopener noreferrer">Pexels</a> · <a href="https://getout.com/blog?3f1cb940_page=138" target="_blank" rel="noopener noreferrer">Getout</a></div>
   </footer>
 
